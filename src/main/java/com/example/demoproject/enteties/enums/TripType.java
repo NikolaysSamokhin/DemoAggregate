@@ -1,4 +1,4 @@
-package com.example.demoproject;
+package com.example.demoproject.enteties.enums;
 
 public enum TripType {
     ECONOMY,

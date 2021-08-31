@@ -1,5 +1,6 @@
 package com.example.demoproject.controllers;
 
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -8,18 +9,19 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/price")
-public class PriceController {
+@RequestMapping(path = "/order")
+public class OrderController {
 
     @GetMapping("/all")
-    public List<String> getAllPrices() {
-        System.out.println("getAllPrices");
+    public List<String> getAllOrders() {
+        System.out.println("getAllOrders");
         return null;
     }
 
     @GetMapping("/{id}")
-    public List<String> getPrice(@PathVariable String id) {
-        System.out.println("getPrice " + id);
+    public List<String> getOrder(@PathVariable String id, Model model) {
+        model.addAttribute("getOrder", id);
+        System.out.println("getOrder "+ id);
         return null;
     }
 }
